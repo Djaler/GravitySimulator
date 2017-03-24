@@ -4,7 +4,7 @@ from FlyObject import FlyObject
 class Collapses(object):
     def __init__(self):
         self.collapses = []
-
+    
     def add(self, object1, object2):
         for collapse in self.collapses:
             if object1 in collapse:
@@ -15,7 +15,7 @@ class Collapses(object):
                 break
         else:
             self.collapses.append({object1, object2})
-
+    
     def calc(self):
         result = []
         for collapse in self.collapses:
@@ -24,5 +24,5 @@ class Collapses(object):
             for obj in collapse[2:]:
                 main_object = FlyObject.join(main_object, obj)
             result.append(main_object)
-
+        
         return result
